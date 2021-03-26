@@ -84,8 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # aliases
 alias zshconfig="nano ~/.zshrc"
 
-alias update="yay -Syy"
-alias upgrade="yay -Syu"
+alias download="~/.grab.sh"
+
+alias update="yay -Syu"
 alias install="yay -S"
 alias remove="yay -R"
 
@@ -95,6 +96,7 @@ alias reset="reset && neofetch"
 
 alias play="~/.mpc_play.sh"
 alias pause="mpc pause"
+
 # add thefuck
 eval $(thefuck --alias)
 
