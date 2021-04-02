@@ -1,0 +1,18 @@
+#!/bin/sh
+
+#                          _      _
+#                         (_)    | |
+#  _   _  __ _ _ __  _ __  _  ___| | __
+# | | | |/ _` | '_ \| '_ \| |/ __| |/ /
+# | |_| | (_| | | | | | | | | (__|   <
+#  \__, |\__,_|_| |_|_| |_|_|\___|_|\_\
+#   __/ |
+#  |___/
+#
+# credit: adi1090x (https://github.com/archcraft-os/archcraft)
+#
+# show window 
+
+DIR="$HOME/.config/bspwm"
+
+rofi -no-lazy-grab -show window -theme $DIR/rofi/themes/window.rasi

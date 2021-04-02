@@ -1,0 +1,60 @@
+#!/bin/bash
+
+#                          _      _
+#                         (_)    | |
+#  _   _  __ _ _ __  _ __  _  ___| | __
+# | | | |/ _` | '_ \| '_ \| |/ __| |/ /
+# | |_| | (_| | | | | | | | | (__|   <
+#  \__, |\__,_|_| |_|_| |_|_|\___|_|\_\
+#   __/ |
+#  |___/
+#
+# credit: adi1090x (https://github.com/archcraft-os/archcraft)
+#
+# select predefined themes
+
+
+DIR="$HOME/.config/bspwm"
+XDIR="$HOME/.Xresources.d"
+
+rofi_command="rofi -theme $DIR/rofi/themes/themes.rasi"
+
+# overwrite x colors, restart bspwm
+style (){
+	cat "$DIR"/themes/$1 > "$XDIR"/colors
+	bspc wm -r
+}
+
+# themes
+theme_1=" Nord"
+theme_2=" Gruvbox"
+theme_3=" Dark"
+theme_4=" Cyberpunk"
+theme_5=" Groot"
+theme_6=" Rick"
+
+# options
+options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6"
+
+# set style
+chosen="$(echo -e "$options" | $rofi_command -p "Available themes" -dmenu -selected-row 0)"
+case $chosen in
+    $theme_1)
+        style nord
+        ;;
+    $theme_2)
+        style gruvbox
+        ;;
+    $theme_3)
+        style dark
+        ;;
+    $theme_4)
+        style cyberpunk
+        ;;
+    $theme_5)
+        style groot
+        ;;
+    $theme_6)
+        style rick
+        ;;
+esac

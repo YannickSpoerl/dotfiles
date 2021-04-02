@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+#                          _      _
+#                         (_)    | |
+#  _   _  __ _ _ __  _ __  _  ___| | __
+# | | | |/ _` | '_ \| '_ \| |/ __| |/ /
+# | |_| | (_| | | | | | | | | (__|   <
+#  \__, |\__,_|_| |_|_| |_|_|\___|_|\_\
+#   __/ |
+#  |___/
+#
+# credit: adi1090x (https://github.com/archcraft-os/archcraft)
+#
+# i can guess, what this is supposed to do, but for me it doesnt do anything
+
+masked=$(bspc query -N -n .hidden -d focused)
+
+if [ -z "$masked" ]; then
+	bspc node focused -g hidden=on
+else
+	bspc node "$masked" -g hidden=off
+fi

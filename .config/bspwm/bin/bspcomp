@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#                          _      _
+#                         (_)    | |
+#  _   _  __ _ _ __  _ __  _  ___| | __
+# | | | |/ _` | '_ \| '_ \| |/ __| |/ /
+# | |_| | (_| | | | | | | | | (__|   <
+#  \__, |\__,_|_| |_|_| |_|_|\___|_|\_\
+#   __/ |
+#  |___/
+#
+# credit: adi1090x (https://github.com/archcraft-os/archcraft)
+
+# Terminate if compton is already running
+killall -q compton
+
+# Wait until the processes have been shut down
+while pgrep -u $UID -x compton >/dev/null; do sleep 1; done
+
+# Launch compton
+compton --config ~/.config/bspwm/compton.conf &

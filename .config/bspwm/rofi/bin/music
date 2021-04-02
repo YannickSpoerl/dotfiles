@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#                          _      _
+#                         (_)    | |
+#  _   _  __ _ _ __  _ __  _  ___| | __
+# | | | |/ _` | '_ \| '_ \| |/ __| |/ /
+# | |_| | (_| | | | | | | | | (__|   <
+#  \__, |\__,_|_| |_|_| |_|_|\___|_|\_\
+#   __/ |
+#  |___/
+#
+#
+# music menu
+
+DIR="$HOME/.config/bspwm"
+
+rofi_command="rofi -theme $DIR/rofi/themes/music.rasi"
+
+# get player status
+status="$($HOME/.config/bspwm/scripts/player-mpris-tail.py current | grep playing)"
+
+# check if spotify is playing
+if [[ -n $status ]]; then
+    play_pause=""
+else
+    play_pause=""
+fi
+
+next=""
+previous=""
+
+# rofi menu options
+options="$previous\n$play_pause\n$next"
+
+# get current song, only title, remove icon
+current=$($HOME/.config/bspwm/scripts/player-mpris-tail.py status -f "{title}" --icon-playing '' --icon-stopped '' --icon-paused '')
+
+# if no song is playing, change text
+if [[ -z "$current" ]]; then
+    current="Nothing playing"
+fi
+
+# spawn menu, do action
+chosen="$(echo -e "$options" | $rofi_command -p "$current" -dmenu -selected-row 1)"
+case $chosen in
+    $previous)
+        $HOME/.config/bspwm/scripts/player-mpris-tail.py previous
+        ;;
+    $play_pause)
+        $HOME/.config/bspwm/scripts/player-mpris-tail.py play-pause
+        ;;
+    $next)
+        $HOME/.config/bspwm/scripts/player-mpris-tail.py next
+        ;;
+esac

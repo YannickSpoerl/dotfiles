@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-scale --no-xinerama $HOME'/.config/bspwm/wallpapers/nicotine_caffeine_dualscreen.png' 

@@ -1,3 +1,14 @@
+#                          _      _
+#                         (_)    | |
+#  _   _  __ _ _ __  _ __  _  ___| | __
+# | | | |/ _` | '_ \| '_ \| |/ __| |/ /
+# | |_| | (_| | | | | | | | | (__|   <
+#  \__, |\__,_|_| |_|_| |_|_|\___|_|\_\
+#   __/ |
+#  |___/
+#
+# credit: adi1090x (https://github.com/archcraft-os/archcraft)
+
 # enable powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -83,12 +94,14 @@ source $ZSH/oh-my-zsh.sh
 
 # aliases
 alias zshconfig="nano ~/.zshrc"
+alias bspwmconfig="atom ~/.config/bspwm"
 
 alias download="~/.grab.sh"
 
 alias update="yay -Syu"
 alias install="yay -S"
 alias remove="yay -R"
+alias search="yay -Ss"
 
 alias l="ls -lh -a"
 alias cat="bat"
