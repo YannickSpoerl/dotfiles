@@ -1,4 +1,4 @@
-# Table of Contents
+# dotfiles
 1. [What's this?](#whats-this)
 2. [So whats the setup?](#So-whats-the-setup)
 3. [Workspaces](#Workspaces)
