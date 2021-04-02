@@ -1,5 +1,5 @@
 # Table of Contents
-1. [What's this?](#what's-this)
+1. [What's this?](#whats-this)
 2. [So whats the setup?](#So-whats-the-setup)
 3. [Workspaces](#Workspaces)
 4. [Screenshots](#Screenshots)
