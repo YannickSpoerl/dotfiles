@@ -97,6 +97,7 @@ alias zshconfig="nano ~/.zshrc"
 alias bspwmconfig="atom ~/.config/bspwm"
 
 alias download="~/.grab.sh"
+alias screenfix="~/.fix_screens.sh"
 
 alias update="yay -Syu"
 alias install="yay -S"
